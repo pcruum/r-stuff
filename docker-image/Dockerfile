@@ -15,7 +15,7 @@ RUN R -e "cmdstanr::install_cmdstan(cores = 4);"
 
 RUN R -e "install.packages(c('coda','mvtnorm','devtools','loo','dagitty','shape', 'rmarkdown', 'languageserver', 'knitr', 'ggplot2', 'tidyverse', 'dataframeexplorer'))"
 
-# set the working directory
-WORKDIR /home/r-stuff
+RUN mkdir /home/r-stuff
+COPY ./r-stuff-volume /home/r-stuff
 
 RUN R -e "install.packages('/home/r-stuff/rethinking_2.42.tar.gz', repos=NULL)"
