@@ -1,0 +1,20 @@
+{
+  "name": "R Development Container",
+  "image": "ghcr.io/pcruum/r-stuff:latest",
+  "extensions": [
+    "Ikuyadeu.r",
+    "REditorSupport.r",
+    "yzhang.markdown-all-in-one",
+    "ms-python.python"
+  ],
+  "settings": {
+    "r.rterm.option": [
+      "--no-save",
+      "--no-restore"
+    ],
+    "r.rterm.linux": "/usr/local/bin/R",
+    "r.lsp.debug": true,
+    "r.lsp.diagnostics": false
+  },
+  "postCreateCommand": "Rscript -e 'install.packages(c(\"languageserver\", \"httpgd\"))'"
+}
