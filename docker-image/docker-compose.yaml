@@ -1,0 +1,12 @@
+version: '1.1'
+
+services:
+  rethink:
+    build: .
+    container_name: r-stuff
+    ports:
+      - "8787:8787"
+    volumes:
+      - ./r-stuff-volume:/home/r-stuff
+    restart: unless-stopped
+    
